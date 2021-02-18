@@ -76,7 +76,8 @@ function groupBy(arr, logic){
         returnArry = [];
         i++
         console.log('i',i)
-        
+
+        // SOMETHING WRONG WITH THIS IF STATEMENT LOOP
         if (i == labels.length-1){
           returnArry.push(arr[x])
           console.log('i',i)
