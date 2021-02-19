@@ -39,58 +39,64 @@
 
 function groupBy(arr, logic){
   let labels= arr.map(logic);
-  let returnOb = {};
+  let returnObj = {};
 
- 
- let returnArry=[];
- let i=0;
-  //for(let i=0;i<labels.length;i++){
     for(let x=0;x<arr.length;x++){
+       if(returnObj.hasOwnProperty(labels[x])) {
+          returnObj[labels[x]].push(arr[x])
+       } else {
+         returnObj[labels[x]]=[arr[x]]
+       }
 
-      // if(i===labels.length-1){
+    }
+      return returnObj;
+}
+
+
+       // if(i===labels.length-1){
       //   returnArry.push(arr[x])
       //   returnOb[labels[i].toString()] = returnArry;
         
       // }
-      if (logic(arr[x])==labels[i]){
-        console.log('x',x)
-        console.log('i',i)
-        returnArry.push(arr[x])
-        console.log('if',returnArry)
-        // if (x == arr.length-1){
-        //   returnOb[labels[i].toString()] = returnArry;
-        // }
-      }
-      else {
-        // push arry into object before setting to empty
-        console.log('x',x)
-        console.log('i',i)
-        console.log('else',returnArry)
-        
-        if(returnArry.length > 0){
-            console.log('hi')
-            console.log('i',i)
-            returnOb[labels[i].toString()] = returnArry;
-            //console.log(returnOb)
-        }
-        returnArry = [];
-        i++
-        console.log('i',i)
+       
 
-        // SOMETHING WRONG WITH THIS IF STATEMENT LOOP
-        if (i == labels.length-1){
-          returnArry.push(arr[x])
-          console.log('i',i)
-          console.log(returnOb)
-          returnOb[labels[i].toString()] = returnArry;
-          console.log(returnOb)
-        }
+      // if (logic(arr[x])==labels[i]){
+      //   //console.log('x',x)
+      //   //console.log('i',i)
+      //   returnArry.push(arr[x])
+      //   console.log('if',returnArry)
+      //   // if (x == arr.length-1){
+      //   //   returnOb[labels[i].toString()] = returnArry;
+      //   // }
+      // }
+      //else {
+        // push arry into object before setting to empty
+        // console.log('x',x)
+        // console.log('i',i)
+        // console.log('else',returnArry)
+        
+        // if(returnArry.length > 0){
+        //     console.log('hi')
+        //     console.log('i',i)
+        //     returnOb[labels[i].toString()] = returnArry;
+        //     //console.log(returnOb)
+        // }
+        // returnArry = [];
+        // i++
+        // console.log('i',i)
+
+        // // SOMETHING WRONG WITH THIS IF STATEMENT LOOP
+        // if (i == labels.length-1){
+        //   returnArry.push(arr[x])
+        //   console.log('i',i)
+        //   console.log(returnOb)
+        //   returnOb[labels[i].toString()] = returnArry;
+        //   console.log(returnOb)
+
       
-      }
-      
-  }
-  return returnOb;
-}
+  
+ 
+
 
 
 pomeranians = [
